@@ -10,7 +10,7 @@ test('submitting the form calls onSubmit with address', () => {
     render(<SearchAddress onSubmit={handleSubmit} />)
 
     userEvent.type(screen.getByLabelText(/address/i), address)
-    userEvent.click(screen.getByText(/submit/i))
+    userEvent.click(screen.getByRole('button'))
 
     expect(handleSubmit).toHaveBeenCalledWith(address)
     expect(handleSubmit).toHaveBeenCalledTimes(1)
