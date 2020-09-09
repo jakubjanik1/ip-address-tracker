@@ -7,6 +7,7 @@ const Form = styled.form`
 
 const Input = styled.input`
     font-size: 18px;
+    font-family: inherit;
     color: hsl(0, 0%, 17%);
     padding: 1rem 1.5rem;
     border: 0;
