@@ -24,13 +24,25 @@ const Header = styled.h1`
 `
 
 export default function App() {
+    const [location, setLocation] = React.useState(null)
+
+    React.useEffect(() => {
+        window.fetch('http://ip-api.com/json')
+            .then(res => res.json())
+            .then(location => setLocation(location))
+    }, [])
+
+    if (!location) {
+        return 'Loading'
+    }
+
     return (
         <>
             <GlobalStyle />
             <Container>
                 <Header>IP Address Tracker</Header>
                 <SearchAddress />
-                <LocationMap latitude={49.60} longitude={20.69} />
+                <LocationMap latitude={location.lat} longitude={location.lon} />
             </Container>
         </>
     )
