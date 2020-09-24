@@ -26,11 +26,13 @@ const Header = styled.h1`
 export default function App() {
   const [address, setAddress] = React.useState('')
   const [location, setLocation] = React.useState(null)
-
+  
   React.useEffect(() => {
-    window.fetch(`http://ip-api.com/json/${address}`)
+    window.fetch(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_API_KEY}&domain=${address}`)
       .then(res => res.json())
-      .then(location => setLocation(location))
+      .then(json => {
+        setLocation({ ...json.location, ...json.ip, ...json.isp})
+      })
   }, [address])
 
   if (!location) {
@@ -43,7 +45,7 @@ export default function App() {
       <Container>
         <Header>IP Address Tracker</Header>
         <SearchAddress onSubmit={address => setAddress(address)} />
-        <LocationMap latitude={location.lat} longitude={location.lon} />
+        <LocationMap latitude={location.lat} longitude={location.lng} />
       </Container>
     </>
   )
