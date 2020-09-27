@@ -2,9 +2,10 @@ import React from 'react'
 import {SearchAddress} from '../SearchAddress'
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import faker from 'faker'
 
 test('submitting the form calls onSubmit with address', () => {
-  const address = '172.156.23.12'
+  const address = faker.internet.ip()
   const handleSubmit = jest.fn()
 
   render(<SearchAddress onSubmit={handleSubmit} />)
