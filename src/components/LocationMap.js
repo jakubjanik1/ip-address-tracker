@@ -6,7 +6,8 @@ import styled from 'styled-components'
 const StyledMap = styled(Map)`
   width: 100%;
   height: calc(100vh - 250px);
-  margin-top: 113px;
+  margin-top: -68px;
+  z-index: 0;
 `
 
 function LocationMap({latitude, longitude}) {
