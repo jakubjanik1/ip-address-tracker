@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import isIp from 'is-ip'
+import isDomain from 'is-domain'
 
 const Form = styled.form`
   display: flex;
@@ -38,7 +40,13 @@ const Button = styled.button`
 function SearchAddress({onSubmit}) {
   function handleSubmit(e) {
     e.preventDefault()
-    onSubmit(e.target.elements.address.value)
+
+    const address = e.target.elements.address.value
+    if (isIp(address) || isDomain(address)) {
+      onSubmit(address)
+    } else {
+      alert('Please, enter a valid IP address or domain')
+    }
   }
 
   return (
