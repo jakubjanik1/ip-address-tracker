@@ -31,9 +31,15 @@ const Button = styled.button`
   border: 0;
   font-size: 18px;
   border-radius: 0 1rem 1rem 0;
+  transition: .2s background;
 
   &:focus {
     outline: transparent;
+  }
+
+  &:hover {
+    background: hsl(0, 0%, 17%);
+    cursor: pointer;
   }
 `
 
@@ -51,7 +57,12 @@ function SearchAddress({onSubmit}) {
 
   return (
       <Form onSubmit={handleSubmit}>
-          <Input aria-label="address" name="address" placeholder="Search for any IP address or domain" />
+          <Input 
+            aria-label="address" 
+            name="address" 
+            placeholder="Search for any IP address or domain" 
+            autoComplete="off" 
+          />
           <Button type="submit">
               <img src="img/icon-arrow.svg" alt="arrow left"/>
           </Button>
