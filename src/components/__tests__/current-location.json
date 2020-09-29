@@ -1,0 +1,29 @@
+{
+  "ip": "185.192.243.55",
+  "location": {
+    "country": "PL",
+    "region": "Mazovia",
+    "city": "Warsaw",
+    "lat": 52.2297,
+    "lng": 21.0122,
+    "postalCode": "",
+    "timezone": "+02:00",
+    "geonameId": 756135
+  },
+  "domains": [
+    "tb3-55.telbeskid.pl"
+  ],
+  "as": {
+    "asn": 206094,
+    "name": "TELBESKID",
+    "route": "185.192.240.0\/22",
+    "domain": "",
+    "type": ""
+  },
+  "isp": "TELBESKID Sp. z o.o.",
+  "proxy": {
+    "proxy": false,
+    "vpn": false,
+    "tor": false
+  }
+}
