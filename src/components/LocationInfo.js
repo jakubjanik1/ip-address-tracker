@@ -4,35 +4,43 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   box-sizing: border-box;
   display: flex;
-  grid-gap: 2rem;
   background: #fff;
-  padding: 2rem;
   border-radius: 1rem;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   z-index: 1;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
+  min-height: 160px;
+`
 
-  & > :not(:last-child) {
-    border-right: 1px solid hsl(0, 0%, 59%);
-    padding-right: 2rem;
-  }
+const Item = styled.div`
+  flex: 1;
+  padding: 2.2rem;
+  position: relative;
 
-  & > * {
-    flex: 1;
+  &:not(:last-child)::after {
+    content: '';
+    height: 50%;
+    width: 1px;
+    background: hsl(0, 0%, 59%, 50%);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
   }
 `
 
-const Field = styled.div`
+const ItemHeader = styled.div`
   color: hsl(0, 0%, 59%);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 1px;
 `
 
-const Value = styled.div`
-  font-size: 22px;
+const ItemValue = styled.div`
+  font-size: 24px;
   font-weight: 500;
-  margin-top: 0.5rem; 
+  margin-top: 0.8rem; 
 `
 
 function LocationInfo({location}) {
@@ -40,22 +48,22 @@ function LocationInfo({location}) {
 
     return (
         <Wrapper>
-            <div>
-                <Field>IP ADDRESS</Field>
-                <Value>{ip}</Value>
-            </div>
-            <div>
-                <Field>LOCATION</Field>
-                <Value>{city}, {region}<br/>{postalCode}</Value>
-            </div>
-            <div>
-                <Field>TIMEZONE</Field>
-                <Value>UTC {timezone}</Value>
-            </div>
-            <div>
-                <Field>ISP</Field>
-                <Value>{isp}</Value>
-            </div>
+            <Item>
+                <ItemHeader>IP ADDRESS</ItemHeader>
+                <ItemValue>{ip}</ItemValue>
+            </Item>
+            <Item>
+                <ItemHeader>LOCATION</ItemHeader>
+                <ItemValue>{city}, {region}<br/>{postalCode}</ItemValue>
+            </Item>
+            <Item>
+                <ItemHeader>TIMEZONE</ItemHeader>
+                <ItemValue>UTC {timezone}</ItemValue>
+            </Item>
+            <Item>
+                <ItemHeader>ISP</ItemHeader>
+                <ItemValue>{isp}</ItemValue>
+            </Item>
         </Wrapper>
     )
 }
