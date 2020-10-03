@@ -2,15 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
+  position: absolute;
+  top: 16.5rem;
+  transform: translateY(-50%);
   box-sizing: border-box;
   display: flex;
   background: #fff;
   border-radius: 1rem;
-  margin-top: 3rem;
   z-index: 1;
   width: 100%;
   max-width: 1200px;
-  min-height: 160px;
+  height: 160px;
 `
 
 const Item = styled.div`
@@ -40,7 +42,12 @@ const ItemHeader = styled.div`
 const ItemValue = styled.div`
   font-size: 24px;
   font-weight: 500;
-  margin-top: 0.8rem; 
+  margin-top: 0.8rem;
+  word-break: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `
 
 function LocationInfo({location}) {

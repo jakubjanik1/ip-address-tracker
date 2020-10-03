@@ -7,7 +7,7 @@ import {LocationInfo} from './LocationInfo'
 const GlobalStyle = createGlobalStyle`
   body {
     background: url('img/pattern-bg.png') no-repeat;
-    background-size: 100% 250px;
+    background-size: 100% 16.5rem;
     font-family: 'Rubik', sans-serif; 
     margin: 0;
   }
@@ -17,6 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 `
 
 const Header = styled.h1`
