@@ -7,7 +7,7 @@ import {LocationInfo} from './LocationInfo'
 const GlobalStyle = createGlobalStyle`
   body {
     background: url('img/pattern-bg.png') no-repeat;
-    background-size: 100% 16.5rem;
+    background-size: auto 16.5rem;
     font-family: 'Rubik', sans-serif; 
     margin: 0;
   }

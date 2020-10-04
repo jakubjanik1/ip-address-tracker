@@ -5,6 +5,8 @@ import isDomain from 'is-domain'
 
 const Form = styled.form`
   display: flex;
+  max-width: 500px;
+  width: calc(100% - 2 * 2rem);
 `
 
 const Input = styled.input`
@@ -12,9 +14,9 @@ const Input = styled.input`
   font-family: inherit;
   color: hsl(0, 0%, 17%);
   padding: 1rem 1.5rem;
+  width: 100%;
   border: 0;
   border-radius: 1rem 0 0 1rem;
-  width: 500px;
 
   &::placeholder {
     color: hsl(0, 0%, 59%);
@@ -22,6 +24,10 @@ const Input = styled.input`
 
   &:focus {
     outline: transparent;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 15px;
   }
 `
 
@@ -61,7 +67,8 @@ function SearchAddress({onSubmit}) {
             aria-label="address" 
             name="address" 
             placeholder="Search for any IP address or domain" 
-            autoComplete="off" 
+            autoComplete="off"
+            size="1"
           />
           <Button type="submit">
               <img src="img/icon-arrow.svg" alt="arrow left"/>

@@ -10,9 +10,17 @@ const Wrapper = styled.div`
   background: #fff;
   border-radius: 1rem;
   z-index: 1;
-  width: 100%;
-  max-width: 1200px;
   height: 160px;
+
+  @media (max-width: 1000px) {
+    top: calc(16.5rem + 2rem) ;
+    flex-direction: column;
+    height: auto; 
+    width: calc(100% - 2 * 2rem);
+    max-width: 500px;
+    align-items: center;
+    padding: 1rem;
+  }
 `
 
 const Item = styled.div`
@@ -30,6 +38,14 @@ const Item = styled.div`
     right: 0;
     transform: translateY(-50%);
   }
+
+  @media (max-width: 1000px) {
+    padding: 0.5rem 2.2rem;
+
+    &::after {
+      display: none;
+    }
+  }
 `
 
 const ItemHeader = styled.div`
@@ -37,6 +53,11 @@ const ItemHeader = styled.div`
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
+
+  @media (max-width: 1000px) {
+    text-align: center;
+    font-size: 10px;
+  }
 `
 
 const ItemValue = styled.div`
@@ -48,6 +69,11 @@ const ItemValue = styled.div`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+
+  @media (max-width: 1000px) {
+    font-size: 19px;
+    margin-top: 0.5rem;
+  }
 `
 
 function LocationInfo({location}) {
