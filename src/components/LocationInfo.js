@@ -11,12 +11,13 @@ const Wrapper = styled.div`
   border-radius: 1rem;
   z-index: 1;
   height: 160px;
+  width: calc(100% - 2 * 2rem);
+  max-width: 1200px;
 
   @media (max-width: 1000px) {
     top: calc(16.5rem + 2rem) ;
     flex-direction: column;
     height: auto; 
-    width: calc(100% - 2 * 2rem);
     max-width: 500px;
     align-items: center;
     padding: 1rem;
