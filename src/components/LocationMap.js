@@ -10,7 +10,7 @@ const StyledMap = styled(Map)`
   margin-top: auto;
 `
 
-function LocationMap({latitude, longitude}) {
+function LocationMap({latitude = 0, longitude = 0}) {
   const coordinates = [latitude, longitude]
 
   return (

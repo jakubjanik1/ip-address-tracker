@@ -84,19 +84,19 @@ function LocationInfo({location}) {
         <Wrapper>
             <Item>
                 <ItemHeader>IP ADDRESS</ItemHeader>
-                <ItemValue>{ip}</ItemValue>
+                <ItemValue>{ip ?? '-'}</ItemValue>
             </Item>
             <Item>
                 <ItemHeader>LOCATION</ItemHeader>
-                <ItemValue>{city}, {region}<br/>{postalCode}</ItemValue>
+                <ItemValue>{city ? `${city}, ${region} ${postalCode}` : '-'}</ItemValue>
             </Item>
             <Item>
                 <ItemHeader>TIMEZONE</ItemHeader>
-                <ItemValue>UTC {timezone}</ItemValue>
+                <ItemValue>{timezone ? `UTC${timezone}` : '-'}</ItemValue>
             </Item>
             <Item>
                 <ItemHeader>ISP</ItemHeader>
-                <ItemValue>{isp}</ItemValue>
+                <ItemValue>{isp ?? '-'}</ItemValue>
             </Item>
         </Wrapper>
     )

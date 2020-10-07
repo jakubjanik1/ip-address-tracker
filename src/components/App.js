@@ -31,19 +31,16 @@ const Header = styled.h1`
 
 export default function App() {
   const [address, setAddress] = React.useState('')
-  const [location, setLocation] = React.useState(null)
+  const [location, setLocation] = React.useState({})
   
   React.useEffect(() => {
+    setLocation({})
     window.fetch(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_API_KEY}&domain=${address}`)
       .then(res => res.json())
       .then(json => {
         setLocation({...json.location, ip: json.ip, isp: json.isp})
       })
   }, [address])
-
-  if (!location) {
-    return 'Loading'
-  }
 
   return (
     <>
