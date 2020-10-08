@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import isIp from 'is-ip'
-import isDomain from 'is-domain'
+import isDomain from 'is-valid-domain'
 
 const Form = styled.form`
   display: flex;
