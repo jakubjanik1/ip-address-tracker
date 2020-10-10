@@ -21,7 +21,13 @@ function LocationMap({latitude = 0, longitude = 0}) {
     >
       <Marker 
         position={coordinates} 
-        icon={new Icon({iconUrl: 'img/icon-location.svg'})}
+        icon={
+          new Icon({
+            iconUrl: 'img/icon-location.svg', 
+            iconSize: [46, 56], 
+            iconAnchor: [23, 56]
+          })
+        }
       />
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
     </StyledMap>

@@ -74,6 +74,7 @@ const ItemValue = styled.div`
   @media (max-width: 1000px) {
     font-size: 19px;
     margin-top: 0.5rem;
+    text-align: center;
   }
 `
 
@@ -92,7 +93,7 @@ function LocationInfo({location}) {
             </Item>
             <Item>
                 <ItemHeader>TIMEZONE</ItemHeader>
-                <ItemValue>{timezone ? `UTC${timezone}` : '-'}</ItemValue>
+                <ItemValue>{timezone ? `UTC ${timezone}` : '-'}</ItemValue>
             </Item>
             <Item>
                 <ItemHeader>ISP</ItemHeader>
