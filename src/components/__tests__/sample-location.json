@@ -1,0 +1,33 @@
+{
+  "ip": "172.217.5.78",
+  "location": {
+    "country": "US",
+    "region": "California",
+    "city": "Los Angeles",
+    "lat": 34.0522,
+    "lng": -118.244,
+    "postalCode": "90009",
+    "timezone": "-07:00",
+    "geonameId": 5368361
+  },
+  "domains": [
+    "blendedsteps.co",
+    "dimasik-was-born.today",
+    "lax17s15-in-f14.1e100.net",
+    "lax17s15-in-f78.1e100.net",
+    "mustafaalmosawi.me"
+  ],
+  "as": {
+    "asn": 15169,
+    "name": "Google LLC",
+    "route": "172.217.5.0\/24",
+    "domain": "https:\/\/about.google\/intl\/en\/",
+    "type": "Content"
+  },
+  "isp": "Google LLC",
+  "proxy": {
+    "proxy": false,
+    "vpn": false,
+    "tor": false
+  }
+}
