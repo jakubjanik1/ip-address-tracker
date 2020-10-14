@@ -2,7 +2,7 @@ import React from 'react'
 import {Map, TileLayer, Marker} from 'react-leaflet'
 import {Icon} from 'leaflet'
 import styled from 'styled-components'
-import Loader from 'react-spinners/PulseLoader'
+import Loader from 'react-loader-spinner'
 
 const StyledMap = styled(Map)`
   width: 100%;
@@ -11,7 +11,7 @@ const StyledMap = styled(Map)`
   margin-top: auto;
 `
 
-const Loading = styled.div`
+const StyledLoader = styled(Loader)`
   width: 100%;
   height: calc(100vh - 16.5rem);
   z-index: 0;
@@ -25,7 +25,7 @@ function LocationMap({latitude, longitude}) {
   const coordinates = [latitude, longitude]
 
   if (!latitude) {
-    return <Loading><Loader /></Loading>
+    return <StyledLoader type="ThreeDots" color="black" />
   }
 
   return (
