@@ -16,7 +16,7 @@
 
 <p align="center">
   <a >
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1602733558/ip-address-tracker/sngvorzrwo3z64j12fvy.png"
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1602754357/ip-address-tracker/lsqicd0x2dozeg2mroqc.png"
          alt="Screenshot">
   </a>
 </p>
@@ -32,10 +32,10 @@ Here are the links to a [challenge description](https://www.frontendmentor.io/ch
 | Tech                                                    | Description                              |
 | ------------------------------------------------------- | ---------------------------------------- |
 | [React](https://reactjs.org/)                           | Front-end JavaScript framework           |
-| [Styled components](https://www.styled-components.com/)  | CSS-in-JS styling library                         |
+| [Styled Components](https://www.styled-components.com/)  | CSS-in-JS styling library                         |
 | [React Testing Library](https://github.com/testing-library/react-testing-library)     | Testing library for React             |
-| [Jest](https://jestjs.io/)                              | JavaScript testing framework             |
-| [ESLint](https://eslint.org/)                           | Javascript linter                        |
+| [Jest](https://jestjs.io/)                              | JavaScript test runner             |
+| [ESLint](https://eslint.org/)                           | JavaScript linter                        |
 | [Vercel](https://vercel.com/)                           | Cloud platform for websites              |
 
 ## Screenshots 📺
@@ -45,7 +45,7 @@ Here are the links to a [challenge description](https://www.frontendmentor.io/ch
 </p>
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1596603244/job-listings-with-filtering/xikcn7" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1602742144/ip-address-tracker/iqgxn4ntusnkmag2crnt.png" alt="Screenshot">
 </p>
 
 ## Installation 💾
