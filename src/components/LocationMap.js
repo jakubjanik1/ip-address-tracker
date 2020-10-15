@@ -1,31 +1,43 @@
 import React from 'react'
 import {Map, TileLayer, Marker} from 'react-leaflet'
 import {Icon} from 'leaflet'
-import styled from 'styled-components'
-import Loader from 'react-loader-spinner'
+import styled, {keyframes, css} from 'styled-components'
 
-const StyledMap = styled(Map)`
+const shared = css`
   width: 100%;
   height: calc(100vh - 16.5rem);
   z-index: 0;
   margin-top: auto;
 `
 
-const StyledLoader = styled(Loader)`
-  width: 100%;
-  height: calc(100vh - 16.5rem);
-  z-index: 0;
-  margin-top: auto;
+const StyledMap = styled(Map)`${shared}`
+
+const Loading = styled.div`
+  ${shared}
   background: #eee;
   display: grid;
   place-items: center;
+`
+
+const jump = keyframes`
+  0% {transform: translateY(0) scale3d(1, 1, 1)}
+  40% {transform: translateY(-30%) scale3d(.9, 1.3, 1)}
+  100% {transform: translateY(-100%) scale3d(1.1, .9, 1)}
+`
+
+const LocationIcon = styled.div`
+  background-image: url('img/icon-location.svg');
+  width: 46px;
+  height: 56px;
+  margin-top: 3.5rem;
+  animation: ${jump} .7s linear alternate infinite;
 `
 
 function LocationMap({latitude, longitude}) {
   const coordinates = [latitude, longitude]
 
   if (!latitude) {
-    return <StyledLoader type="ThreeDots" color="black" />
+    return <Loading><LocationIcon /></Loading>
   }
 
   return (
