@@ -31,12 +31,13 @@ Here are the links to a [challenge description](https://www.frontendmentor.io/ch
 
 | Tech                                                    | Description                              |
 | ------------------------------------------------------- | ---------------------------------------- |
-| [React](https://reactjs.org/)                           | Front-end JavaScript framework           |
+| [React](https://reactjs.org/)                           | Front-end JavaScript library           |
 | [Styled Components](https://www.styled-components.com/)  | CSS-in-JS styling library                         |
 | [React Testing Library](https://github.com/testing-library/react-testing-library)     | Testing library for React             |
 | [Jest](https://jestjs.io/)                              | JavaScript test runner             |
 | [ESLint](https://eslint.org/)                           | JavaScript linter                        |
 | [Vercel](https://vercel.com/)                           | Cloud platform for websites              |
+| [Leaflet](https://leafletjs.com/)                                             | Library for interactive maps |
 
 ## Screenshots 📺
 
