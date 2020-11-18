@@ -8,7 +8,7 @@
 
 </h1>
 
-<h4 align="center">IP Address Tracker - challenge solution</h4>
+<h4 align="center">IP Address Tracker</h4>
 
 <p align="center">
   <a >
