@@ -6,10 +6,6 @@
 <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1596341165/intro-component-with-signup-form/jaa0re6jaqvgthphcak6.png"  alt="Logo">
 </p>
 
-<br>
-
-<br>
-
 </h1>
 
 <h4 align="center">IP Address Tracker - challenge solution</h4>
@@ -52,7 +48,7 @@ Here are the links to a [challenge description](https://www.frontendmentor.io/ch
 ## Installation 💾
 
 ``` shell
-git clone https://github.com/jakubjanik1/ip-address-tracker.git
+git clone https://github.com/kubajanik/ip-address-tracker.git
 
 yarn install
 
