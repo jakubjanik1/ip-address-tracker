@@ -12,7 +12,7 @@
 
 <p align="center">
   <a >
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1602754357/ip-address-tracker/lsqicd0x2dozeg2mroqc.png"
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1602754357/ip-address-tracker/lsqicd0x2dozeg2mroqc.webp"
          alt="Screenshot">
   </a>
 </p>
@@ -38,11 +38,11 @@ Here are the links to a [challenge description](https://www.frontendmentor.io/ch
 ## Screenshots 📺
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1602735104/ip-address-tracker/ucwad8eh3ohuswvorang.png" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1602735104/ip-address-tracker/ucwad8eh3ohuswvorang.webp" alt="Screenshot">
 </p>
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1602742144/ip-address-tracker/iqgxn4ntusnkmag2crnt.png" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1602742144/ip-address-tracker/iqgxn4ntusnkmag2crnt.webp" alt="Screenshot">
 </p>
 
 ## Installation 💾
