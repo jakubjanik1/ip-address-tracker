@@ -26,10 +26,14 @@ test('displays information about current location on the first load', async () =
 
   await waitForElementToBeRemoved(() => screen.getAllByText('-'))
   
-  expect(screen.getByText('185.192.243.55')).toBeInTheDocument()
-  expect(screen.getByText('Warsaw, Mazovia')).toBeInTheDocument()
-  expect(screen.getByText('UTC +02:00')).toBeInTheDocument()
-  expect(screen.getByText('TELBESKID Sp. z o.o.')).toBeInTheDocument()
+  const {ip, isp, location: {city, region, postalCode, timezone}} = currentLocation
+
+  expect(screen.getByText(ip)).toBeInTheDocument()
+  expect(screen.getByText(city)).toBeInTheDocument()
+  expect(screen.getByText(region)).toBeInTheDocument()
+  expect(screen.getByText(postalCode)).toBeInTheDocument()
+  expect(screen.getByText(timezone)).toBeInTheDocument()
+  expect(screen.getByText(isp)).toBeInTheDocument()
 })
 
 test('displays information about provided address', async () => {
@@ -41,8 +45,12 @@ test('displays information about provided address', async () => {
 
   await waitForElementToBeRemoved(() => screen.getAllByText('-'))
 
-  expect(screen.getByText('172.217.5.78')).toBeInTheDocument()
-  expect(screen.getByText('Los Angeles, California 90009')).toBeInTheDocument()
-  expect(screen.getByText('UTC -07:00')).toBeInTheDocument()
-  expect(screen.getByText('Google LLC')).toBeInTheDocument()
+  const {ip, isp, location: {city, region, postalCode, timezone}} = sampleLocation
+
+  expect(screen.getByText(ip)).toBeInTheDocument()
+  expect(screen.getByText(city)).toBeInTheDocument()
+  expect(screen.getByText(region)).toBeInTheDocument()
+  expect(screen.getByText(postalCode)).toBeInTheDocument()
+  expect(screen.getByText(timezone)).toBeInTheDocument()
+  expect(screen.getByText(isp)).toBeInTheDocument()
 })

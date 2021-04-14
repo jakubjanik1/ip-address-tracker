@@ -89,11 +89,23 @@ function LocationInfo({location}) {
             </Item>
             <Item>
                 <ItemHeader>LOCATION</ItemHeader>
-                <ItemValue>{city ? `${city}, ${region} ${postalCode}` : '-'}</ItemValue>
+                {city ? (
+                  <ItemValue>
+                    <span>{city}</span>, <span>{region}</span> <span>{postalCode}</span>
+                  </ItemValue>
+                ) : (
+                  <ItemValue> - </ItemValue>
+                )}
             </Item>
             <Item>
                 <ItemHeader>TIMEZONE</ItemHeader>
-                <ItemValue>{timezone ? `UTC ${timezone}` : '-'}</ItemValue>
+                {timezone ? (
+                  <ItemValue>
+                    UTC <span>{timezone}</span>
+                  </ItemValue>
+                ) : (
+                  <ItemValue> - </ItemValue>
+                )}
             </Item>
             <Item>
                 <ItemHeader>ISP</ItemHeader>
