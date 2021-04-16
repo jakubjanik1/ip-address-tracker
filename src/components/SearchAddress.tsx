@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {FormEvent, useRef} from 'react'
 import styled from 'styled-components'
 import isIp from 'is-ip'
 import isDomain from 'is-valid-domain'
@@ -49,11 +49,17 @@ const Button = styled.button`
   }
 `
 
-function SearchAddress({onSubmit}) {
-  function handleSubmit(e) {
-    e.preventDefault()
+interface SearchAddressProps {
+  onSubmit: (address: string) => void
+}
 
-    const address = e.target.elements.address.value
+function SearchAddress({onSubmit}: SearchAddressProps) {
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault()
+
+    const address = inputRef?.current?.value as string
     if (isIp(address) || isDomain(address)) {
       onSubmit(address)
     } else {
@@ -62,18 +68,19 @@ function SearchAddress({onSubmit}) {
   }
 
   return (
-      <Form onSubmit={handleSubmit}>
-          <Input 
-            aria-label="address" 
-            name="address" 
-            placeholder="Search for any IP address or domain" 
-            autoComplete="off"
-            size="1"
-          />
-          <Button type="submit">
-              <img src="img/icon-arrow.svg" alt="arrow left"/>
-          </Button>
-      </Form> 
+    <Form onSubmit={handleSubmit}>
+      <Input 
+        ref={inputRef}
+        aria-label="address" 
+        name="address" 
+        placeholder="Search for any IP address or domain" 
+        autoComplete="off"
+        size={1}
+      />
+      <Button type="submit">
+        <img src="img/icon-arrow.svg" alt="arrow left"/>
+      </Button>
+    </Form> 
   )
 }
 

@@ -32,18 +32,19 @@ test('submitting the form with domain calls onSubmit with that domain', () => {
 
 test('submitting the form with invalid address show alert with an error', () => {
   window.alert = jest.fn()
-  const randomText = faker.random.word()
+  
   const handleSubmit = jest.fn()
-
   render(<SearchAddress onSubmit={handleSubmit} />)
-
+  
+  const randomText = faker.random.word()
   userEvent.type(screen.getByLabelText(/address/i), randomText)
   userEvent.click(screen.getByRole('button'))
 
   expect(handleSubmit).toHaveBeenCalledTimes(0)
   expect(window.alert).toHaveBeenCalledWith('Please, enter a valid IP address or domain')
 
-  userEvent.type(screen.getByLabelText(/address/i), '')
+  const emptyText = '';
+  userEvent.type(screen.getByLabelText(/address/i), emptyText)
   userEvent.click(screen.getByRole('button'))
 
   expect(handleSubmit).toHaveBeenCalledTimes(0)
