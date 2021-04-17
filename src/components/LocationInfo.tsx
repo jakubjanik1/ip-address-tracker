@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Location} from '../models/Location'
 
 const Wrapper = styled.div`
   position: absolute;
@@ -78,7 +79,11 @@ const ItemValue = styled.div`
   }
 `
 
-function LocationInfo({location}) {
+interface LocationInfoProps {
+  location: Partial<Location>
+}
+
+function LocationInfo({location}: LocationInfoProps) {
     const {ip, timezone, city, postalCode, region, isp} = location
 
     return (

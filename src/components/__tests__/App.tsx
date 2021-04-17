@@ -1,7 +1,7 @@
 import React from 'react'
 import {rest} from 'msw'
 import {setupServer} from 'msw/node'
-import {render, screen, waitForElementToBeRemoved} from '@testing-library/react'
+import {render, screen, waitFor} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom/extend-expect'
 import App from '../App'
@@ -24,16 +24,16 @@ afterAll(() => server.close())
 test('displays information about current location on the first load', async () => {
   render(<App />)
 
-  await waitForElementToBeRemoved(() => screen.getAllByText('-'))
-  
   const {ip, isp, location: {city, region, postalCode, timezone}} = currentLocation
 
-  expect(screen.getByText(ip)).toBeInTheDocument()
-  expect(screen.getByText(city)).toBeInTheDocument()
-  expect(screen.getByText(region)).toBeInTheDocument()
-  expect(screen.getByText(postalCode)).toBeInTheDocument()
-  expect(screen.getByText(timezone)).toBeInTheDocument()
-  expect(screen.getByText(isp)).toBeInTheDocument()
+  await waitFor(() => {
+    expect(screen.getByText(ip)).toBeInTheDocument()
+    expect(screen.getByText(city)).toBeInTheDocument()
+    expect(screen.getByText(region)).toBeInTheDocument()
+    expect(screen.getByText(postalCode)).toBeInTheDocument()
+    expect(screen.getByText(timezone)).toBeInTheDocument()
+    expect(screen.getByText(isp)).toBeInTheDocument()
+  })
 })
 
 test('displays information about provided address', async () => {
@@ -43,14 +43,14 @@ test('displays information about provided address', async () => {
   userEvent.type(addressInput, 'google.com')
   userEvent.click(screen.getByRole('button'))
 
-  await waitForElementToBeRemoved(() => screen.getAllByText('-'))
-
   const {ip, isp, location: {city, region, postalCode, timezone}} = sampleLocation
 
-  expect(screen.getByText(ip)).toBeInTheDocument()
-  expect(screen.getByText(city)).toBeInTheDocument()
-  expect(screen.getByText(region)).toBeInTheDocument()
-  expect(screen.getByText(postalCode)).toBeInTheDocument()
-  expect(screen.getByText(timezone)).toBeInTheDocument()
-  expect(screen.getByText(isp)).toBeInTheDocument()
+  await waitFor(() => {
+    expect(screen.getByText(ip)).toBeInTheDocument()
+    expect(screen.getByText(city)).toBeInTheDocument()
+    expect(screen.getByText(region)).toBeInTheDocument()
+    expect(screen.getByText(postalCode)).toBeInTheDocument()
+    expect(screen.getByText(timezone)).toBeInTheDocument()
+    expect(screen.getByText(isp)).toBeInTheDocument()
+  })
 })

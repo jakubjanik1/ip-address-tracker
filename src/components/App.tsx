@@ -3,6 +3,7 @@ import {SearchAddress} from './SearchAddress'
 import styled, {createGlobalStyle} from 'styled-components'
 import {LocationMap} from './LocationMap'
 import {LocationInfo} from './LocationInfo'
+import {Location} from '../models/Location'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -31,14 +32,15 @@ const Header = styled.h1`
 
 export default function App() {
   const [address, setAddress] = React.useState('')
-  const [location, setLocation] = React.useState({})
+  const [location, setLocation] = React.useState<Location>()
   
   React.useEffect(() => {
-    setLocation({})
     window.fetch(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_API_KEY}&domain=${address}`)
       .then(res => res.json())
-      .then(json => {
-        setLocation({...json.location, ip: json.ip, isp: json.isp})
+      .then(location => {
+        const {ip, isp, location: {city, region, postalCode, timezone, lat, lng}} = location
+
+        setLocation({ip, isp, city, region, postalCode, timezone, lat, lng})
       })
   }, [address])
 
@@ -48,8 +50,11 @@ export default function App() {
       <Container>
         <Header>IP Address Tracker</Header>
         <SearchAddress onSubmit={address => setAddress(address)} />
-        <LocationInfo location={location} />
-        <LocationMap latitude={location.lat} longitude={location.lng} />
+        <LocationInfo location={location ?? {}} />
+        <LocationMap 
+          latitude={location && location.lat} 
+          longitude={location && location.lng}
+        />        
       </Container>
     </>
   )

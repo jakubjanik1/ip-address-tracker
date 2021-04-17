@@ -1,6 +1,6 @@
 import React from 'react'
-import {Map, TileLayer, Marker} from 'react-leaflet'
-import {Icon} from 'leaflet'
+import {Map, TileLayer, Marker, MapProps} from 'react-leaflet'
+import {Icon, LatLng} from 'leaflet'
 import styled, {keyframes, css} from 'styled-components'
 
 const shared = css`
@@ -10,7 +10,7 @@ const shared = css`
   margin-top: auto;
 `
 
-const StyledMap = styled(Map)`${shared}`
+const StyledMap = styled(Map)<MapProps>`${shared}`
 
 const Loading = styled.div`
   ${shared}
@@ -33,12 +33,17 @@ const LocationIcon = styled.div`
   animation: ${jump} .7s linear alternate infinite;
 `
 
-function LocationMap({latitude, longitude}) {
-  const coordinates = [latitude, longitude]
+interface LocationMapProps {
+  latitude?: number
+  longitude?: number
+}
 
-  if (!latitude) {
+function LocationMap({latitude, longitude}: LocationMapProps) {
+  if (!latitude || !longitude) {
     return <Loading><LocationIcon /></Loading>
   }
+  
+  const coordinates = new LatLng(latitude, longitude)
 
   return (
     <StyledMap 
